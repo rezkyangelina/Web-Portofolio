@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Rezky Angelina Pailang</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playball&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo" class="logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-left">
+        <div class="contact-title">
+          <span>Lets’s talk on<br>something<br>great together</span>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <a href="mailto:rezkyangelina26@gmail.com"><img src="img/Vector (6).png" alt="Gmail" class="contact-icon"></a>
+            <span>rezkyangelina26@gmail.com</span>
+          </div>
+          <div class="contact-info-item">
+            <a><img src="img/Vector (8).png" alt="contact" class="contact-icon"></a>
+            <span>+62 82196832023</span>
+          </div>
+          <div class="contact-info-item">
+            <a><img src="img/Vector (9).png" alt="address" class="contact-icon"></a>
+            <span>40 Alley 12, Kerung-Kerung Street,<br>Makassar, South Sulawesi 90143,<br>Indonesia.</span>
+          </div>
+        </div>
+        <div class="contact-social">
+            <a href="https://github.com/rezkyangelina"><img src="img/Vector (7).png" alt="Github" class="contact-icon"></a>
+            <a href="https://www.instagram.com/rezkyangelina__/"><img src="img/Vector (5).png" alt="Instagram" class="contact-icon"></a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form">
+          <div class="contact-form-group">
+            <label class="contact-form-label">I'm interested in:</label>
+            <div class="contact-interests">
+              <button type="button" class="interest-btn">UX/UI Design</button>
+              <button type="button" class="interest-btn">Design System</button>
+              <button type="button" class="interest-btn">Web Design</button>
+              <button type="button" class="interest-btn">Graphic Design</button>
+              <button type="button" class="interest-btn">Other</button>
+            </div>
+          </div>
+          <div class="contact-form-group">
+            <label for="name">Your Name :</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="email">Your Email :</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="message">Your Message :</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="contact-send-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div id="thankyou-modal" class="modal-thankyou">
+        <div class="modal-content">
+          <span id="close-modal" class="close-modal">&times;</span>
+          <h2>Thank You!</h2>
+          <p>we have received your message</p>
+        </div>
+      </div>
+  </section>
+  
+  <script>
+    document.querySelectorAll('.interest-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.interest-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+  
+    // Modal logic
+    const form = document.querySelector('.contact-form');
+    const modal = document.getElementById('thankyou-modal');
+    const closeModal = document.getElementById('close-modal');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+      form.reset();
+      document.querySelectorAll('.interest-btn').forEach(b => b.classList.remove('selected'));
+    });
+  
+    closeModal.onclick = function() {
+      modal.style.display = 'none';
+    };
+  
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+    </script>
+
+</body>
+</html>
