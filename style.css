@@ -214,12 +214,20 @@ footer {
   text-align: center;
   box-shadow: 0 2px 8px rgba(26,71,82,0.04);
   text-decoration: none;
+  transition: color 0.3s ease; 
 }
+
 
 .portfolio-subtitle a {
   text-decoration: none;
   color: inherit;
 }
+
+.portfolio-subtitle:hover {
+  color: #FBE5E2; 
+  background-color: #F3CDCC; 
+}
+
 .portfolio-items {
   display: flex;
   gap: 40px;
@@ -953,6 +961,10 @@ footer {
   flex-shrink: 0;
 }
 
+.portfolio-list-btn-hover {
+  flex-shrink: 0;
+}
+
 .portfolio-list-btn {
   display: inline-block;
   background: #F3CDCC;
@@ -971,8 +983,8 @@ footer {
 }
 
 .portfolio-list-btn:hover {
-  background: #F3CDCC;
-  color: #1A4752;
+  background: #FBE5E2;
+  color: #fff;
 }
 
 @media (max-width: 900px) {
